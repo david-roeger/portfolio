@@ -46,6 +46,7 @@ class customImageHover extends HTMLElement {
 
             .inner-container {
                 position: relative;
+                padding: 0.5rem
 
             }
 
