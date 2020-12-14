@@ -6,29 +6,34 @@
     color: black;
     font-size: 1rem;
     display: grid;
-    grid-template: 2rem 2rem 1fr calc(6.5rem + 2px)/ 2rem 2rem 1fr 2rem 2rem 2rem 2rem;
-    font-weight: 500;;
+    grid-template: 2rem 2rem 2rem 2rem 1fr calc(6.5rem + 2px)/ 2rem 2rem 1fr 2rem 2rem 2rem 2rem;
+    font-weight: 500;
 }
 
 h1 {
     grid-area: 2 / 2 / 3 / 3 ;
 }
 
-.preview {
+.info {
     grid-area: 2 / 4 / 3 / 5;
 }
 
-.count{
+.preview {
     grid-area: 2 / 6 / 3 / 7;
 }
 
+.count {
+    grid-area: 4 / 6 / 5 / 7;
+
+}
+
 .canvas-container {
-    grid-area: 1 / 1 / 5 / 8;
+    grid-area: 1 / 1 / 7 / 8;
     z-index: 1;
 }
 
 .button-container {
-    grid-area: 4 / 1 / 5 / 8;
+    grid-area: 6 / 1 / 7 / 8;
     z-index: 2;
     border-top: 2px solid black;
 }
@@ -48,6 +53,7 @@ h1 {
     margin: 1rem 0;
 }
 
+.info,
 .preview,
 .count {
     z-index: 3;
