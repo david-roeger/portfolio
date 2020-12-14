@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.typekit.net/ehf1hbv.css">
+
+    <link href="../styles/normalize.css" rel="stylesheet" type="text/css">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/move.css" rel="stylesheet" type="text/css">
+
+    <link href="../styles/animations.css" rel="stylesheet" type="text/css">
+
+    <script type="module" crossorigin src="../scripts/components/marquee.js"></script>
+    <script type="module" crossorigin src="../scripts/components/logo.js"></script>
+    <script type="module" crossorigin src="../scripts/components/icon.js"></script>
+
+    <script type="module" src="../scripts/move.js" defer></script>
+    <title>Move</title>
+</head>
+<body>
+    <div class="container">
+        <custom-face>
+            <custom-icon width="2" height="2" type="default"></custom-icon>
+        </custom-face>
+        <div class="canvas-container"></div>
+        <custom-icon class="loading" width="2" height="2" fill="black" type="smile" animation="spin" duration="1"></custom-icon>
+        <span class="preview border"></span>
+        <span class="count border">0</span>
+        <div class="button-container">
+            <div class="row slider-container">
+                <input type="range" min="1" max="5" value="3">
+            </div>
+            <div class="row">
+                <a href="#" id="download" crossOrigin download="mosaik.png">
+                    <custom-icon width="2" height="2" type="arrow-down"></custom-icon> 
+                </a>
+                <custom-icon id="delete" width="2" height="2" type="delete"></custom-icon>
+                <custom-icon id="play" width="2" height="2" type="pause"></custom-icon>
+                <custom-icon id="next" width="2" height="2" type="arrow-right"></custom-icon> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

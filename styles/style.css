@@ -1,0 +1,116 @@
+html,body {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+
+
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+
+    overflow: hidden;
+}
+
+:root {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    letter-spacing: 0.1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+@media only screen and (max-width: 660px) {
+    :root {
+        font-weight: 500;
+        font-size: 20px;
+    }
+}
+
+body {
+    position: relative;
+    background-color: white;
+}
+
+input[type=range] {
+    width: 14rem;
+    height: 1rem;
+    color: transparent;
+    background-color: transparent;
+    -webkit-appearance: none;
+  }
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    margin-top: -0.5rem;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+}
+
+input[type=range]::-moz-range-thumb {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    margin-top: -0.5rem;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+}
+  
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1.6px;
+    border-radius: 1px;
+    cursor: pointer;
+    background: black;
+    border: none;
+}
+
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1.6px;
+    cursor: pointer;
+    background: black;
+    border-radius: 1px;
+    border: none;
+}
+
+
+custom-face {
+    z-index: 99;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.circle {
+    border-radius: 50%;
+    transition: border-radius 0.1s linear;
+}
+
+.fill {
+    background-color: white;
+}
+
+.border {
+    border: 2px solid black;
+}
+
+.border-top {
+    border-top: 2px solid black;
+}
+
+a:focus {
+    outline: none;
+}

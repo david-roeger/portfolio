@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.typekit.net/ehf1hbv.css">
+    <link href="styles/normalize.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+
+    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/animations.css" rel="stylesheet" type="text/css">
+
+    <script type="module" crossorigin src="scripts/components/marquee.js"></script>
+    <script type="module" crossorigin src="scripts/components/logo.js"></script>
+    <script type="module" crossorigin src="scripts/components/image-hover.js"></script>
+    <script type="module" crossorigin src="scripts/components/icon.js"></script>
+
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="container">
+        <custom-face href="work/move.html">
+            <custom-icon width="2" height="2" type="default"></custom-icon>
+        </custom-face>
+        <section>
+            <custom-image-hover class="border">
+                <a href="#" hover-image="assets/images/move/0.png">Projekt 01</a>
+                <a href="#" hover-image="assets/images/move/1.png">Projekt 02</a>
+                <a href="#" hover-image="assets/images/move/2.png">Projekt 03</a> 
+                <a href="#" hover-image="assets/images/move/3.png">Projekt 04</a> 
+                <a href="#" hover-image="assets/images/move/4.png">Projekt 05</a>
+                <a href="work/move.html" hover-image="assets/images/move/0.png">Visuelle Experimente</a>
+                <div class="hover-image"></div>
+            </custom-image-hover>
+        </section>
+        <custom-marquee duration="15" height="3" animation="move" repeat="true">
+            <span>Talk to me</span>
+            <span>/</span>
+            <span>Or hire me</span>   
+            <span>/</span>
+            <span>Or get access to my secret meme archive</span>
+                <custom-icon width="2" height="2"type="smile" animation="spin"/>   
+        </custom-marquee>
+</body>
+</html>

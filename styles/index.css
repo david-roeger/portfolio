@@ -1,0 +1,56 @@
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: black;
+    font-size: 1rem;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template: 2rem 2rem 2rem 1rem 1fr calc(3rem + 2px) / 2rem 2rem 2rem 1fr 2rem;
+}
+
+custom-face {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    grid-area: 1 / 2 / 7 / 5;
+    position: relative;
+    display: grid;
+    place-items: center center;
+}
+
+@media only screen and (max-width: 660px) {
+    section {
+        grid-area: 4 / 2 / 7 / 5;
+        place-items: start center;
+    }
+}
+
+section::-webkit-scrollbar {
+    display: none;
+}
+
+custom-marquee {
+    grid-area: 6 / 1 / 7 / 6;
+    display: inline;
+}
+
+custom-icon {
+    display: inline-block;
+}
+
+custom-image-hover {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 2rem;
+    
+}
