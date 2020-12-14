@@ -31,9 +31,12 @@ class customImageHover extends HTMLElement {
                 user-select: none;
             }
 
-            .logo > * {
-                transform: rotate(0deg);
-                transition: transform 0.15s linear;
+            a:first-of-type {
+                padding-top: 0.5rem;
+            }
+            
+            a:last-of-type {
+                padding-bottom: 0.5rem;
             }
             
             a,
@@ -46,8 +49,6 @@ class customImageHover extends HTMLElement {
 
             .inner-container {
                 position: relative;
-                padding: 0.5rem
-
             }
 
             .hover-image {
