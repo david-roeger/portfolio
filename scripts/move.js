@@ -93,7 +93,7 @@ function loadImages() {
  */
 function requestImage(signal) {
   const num = Math.floor(Math.random()* 10000);
-  fetch(`https://source.unsplash.com/collection/80994033/?sig=${num}`, {signal})
+  fetch(`https://source.unsplash.com/collection/789734/?sig=${num}`, {signal})
    .then(img => {
      if(!local){
       setImage(img.url);
