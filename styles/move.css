@@ -7,11 +7,10 @@
     font-size: 1rem;
     display: grid;
     grid-template: 2rem 2rem 1fr calc(6.5rem + 2px)/ 2rem 2rem 1fr 2rem 2rem 2rem 2rem;
-
-
+    font-weight: 500;;
 }
 
-custom-face {
+h1 {
     grid-area: 2 / 2 / 3 / 3 ;
 }
 

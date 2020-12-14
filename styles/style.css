@@ -32,6 +32,17 @@ body {
     background-color: white;
 }
 
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    z-index: 99;
+}
+
+custom-face {
+    z-index: 99;
+}
+
 input[type=range] {
     width: 14rem;
     height: 1rem;
@@ -83,9 +94,8 @@ input[type=range]::-webkit-slider-runnable-track {
     border: none;
 }
 
-
-custom-face {
-    z-index: 99;
+.container {
+    max-width: 1920px;
 }
 
 .sticky {

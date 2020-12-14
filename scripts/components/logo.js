@@ -7,6 +7,7 @@ class customFace extends HTMLElement {
         this.attachShadow({mode: 'open'});
         
         const href = getAttrText('href', this.attributes) || "../";
+        const title = getAttrText('title', this.attributes) || "index";
 
         const style = document.createElement('style');
         style.textContent = /*css*/`
@@ -42,6 +43,7 @@ class customFace extends HTMLElement {
 
         const logo = document.createElement("a");
         logo.href = href;
+        logo.title = title;
         logo.classList.add("logo");
         console.log(this.innerHTML);
         logo.innerHTML = /*html*/`
@@ -82,7 +84,7 @@ class customFace extends HTMLElement {
                 motionTimeOut = setTimeout(() => checkMotion(), 500);
             } else {
                 window.addEventListener('mousemove', (e) => moveHandler(e));
-                window.addEventListener('touchmove', (e) => touchHandler(e));
+                window.addEventListener('touchmove', (e) => touchHandler(e), {passive: true});
             }
             frame = window.requestAnimationFrame(updateImage);
         }

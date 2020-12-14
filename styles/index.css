@@ -12,7 +12,7 @@
     grid-template: 2rem 2rem 2rem 1rem 1fr calc(3rem + 2px) / 2rem 2rem 2rem 1fr 2rem;
 }
 
-custom-face {
+h1 {
     grid-area: 2 / 2 / 3 / 3;
 }
 
@@ -50,6 +50,7 @@ custom-icon {
 
 custom-image-hover {
     width: 100%;
+    max-width: 650px;
     height: fit-content;
     margin-bottom: 2rem;
     

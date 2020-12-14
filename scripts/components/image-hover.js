@@ -96,12 +96,12 @@ class customImageHover extends HTMLElement {
                 if(e.path[0] instanceof HTMLAnchorElement){
                     hoverImage.style.backgroundImage = `url(${e.path[0].attributes["hover-image"]?.value || ""})`;
                 }
-            });
+            }, {passive: true});
 
 
             inner.addEventListener("touchcancel", (e)  => {
                 hoverImage.style.backgroundImage = "";
-            });
+            }, {passive: true});
 
             inner.addEventListener("mousemove", (e) => {
                 hoverImage.offsetWidth;

@@ -200,7 +200,7 @@ function setHandler() {
     xValue = dimensions.x / 2;
     yValue = dimensions.y / 2;
     window.addEventListener('mousemove', (e) => moveHandler(e));
-    window.addEventListener('touchmove', (e) => touchHandler(e));
+    window.addEventListener('touchmove', (e) => touchHandler(e), {passive: true});
   }
   smiley.remove();
   setPreview(images[imageIndex].img.src);

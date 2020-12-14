@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://use.typekit.net/ehf1hbv.css">
+    <meta name="description" content="David interactive Portfolio">
+    <meta name="keywords" content="Art, Design, Visuals, Experience">
+    <meta name="author" content="David Roeger">
+
+
+    <link rel="preconnect" href="https://use.typekit.net/ehf1hbv.css">
 
     <link href="../styles/normalize.css" rel="stylesheet" type="text/css">
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
@@ -15,15 +20,17 @@
     <script type="module" crossorigin src="../scripts/components/marquee.js"></script>
     <script type="module" crossorigin src="../scripts/components/logo.js"></script>
     <script type="module" crossorigin src="../scripts/components/icon.js"></script>
-
     <script type="module" src="../scripts/move.js" defer></script>
+
     <title>Move</title>
 </head>
 <body>
     <div class="container">
-        <custom-face>
-            <custom-icon width="2" height="2" type="default"></custom-icon>
-        </custom-face>
+        <h1>
+            <custom-face title="Startseite">
+                <custom-icon width="2" height="2" type="default"></custom-icon>
+            </custom-face>
+        </h1>
         <div class="canvas-container"></div>
         <custom-icon class="loading" width="2" height="2" fill="black" type="smile" animation="spin" duration="1"></custom-icon>
         <span class="preview border"></span>
