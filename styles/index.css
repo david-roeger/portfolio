@@ -26,7 +26,6 @@ section {
 
 @media only screen and (max-width: 660px) {
     section {
-        grid-area: 4 / 2 / 7 / 5;
         place-items: start center;
     }
 }
