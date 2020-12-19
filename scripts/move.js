@@ -149,7 +149,9 @@ function setImage(src) {
       }
     } catch (error) {
        console.log(error)
-       requestImage(); 
+       if(!local){
+        requestImage(); 
+       }
     }
   });
 }

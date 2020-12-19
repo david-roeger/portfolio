@@ -31,7 +31,7 @@ class customFace extends HTMLElement {
 
             .logo > * {
                 transform: rotate(0deg);
-                transition: transform 0.15s linear;
+                transition: transform 0.05s linear;
             }
             
             .logo:hover > *,            
