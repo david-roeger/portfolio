@@ -85,8 +85,8 @@ function setIconStyle(attributes) {
         width: ${attributes.width}rem;
         height: ${attributes.height}rem;
         background-color: ${attributes.fill};
-        -webkit-mask: url(${url}/scripts/components/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
-        mask: url(${url}/scripts/components/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
+        -webkit-mask: url(${url}/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
+        mask: url(${url}/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
     }
 `
 }
