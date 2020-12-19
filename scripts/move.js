@@ -48,6 +48,7 @@ function reload() {
   window.cancelAnimationFrame(frame);
   canvas.width = dimensions.x;
   canvas.height = dimensions.y;
+  imageIndex = 0;
 
   updateImageDimensions();
   if(!local) {
@@ -55,7 +56,7 @@ function reload() {
   } else if (!images.length || images[0].img.src.includes("https://images.unsplash.com")) {
     loadLocalImages();
   } else { 
-    setHandler()
+    setHandler();
   }
 }
 
@@ -79,11 +80,9 @@ function updateImageDimensions() {
 function loadImages() {
   images = [];
   initHandler = true;
-  imageIndex = 0;
   setCount(0);
-  const signal = controller.signal;
   for (let i = 0; i < imageCountMax; i++) {
-    requestImage(signal);
+    requestImage(controller.signal);
   }
 }
 
@@ -97,7 +96,6 @@ function requestImage(signal) {
    .then(img => {
      if(!local){
       setImage(img.url);
-      console.log(img.url);
      }
    }).catch((error) => {
      console.log(error);
@@ -125,33 +123,36 @@ function setImage(src) {
   imageHtml.crossOrigin = "Anonymous";
   imageHtml.src = src;
   imageHtml.addEventListener("load", (e) => {
-    try {
-     for (let j = 0; j < images.length; j++) {
-       if(imageHtml.src == images[j].img.src) {
-        throw new Error("Duplicate");
-       }
-     }
+    console.log(images.length, imageCountMax)
+    if(images.length < imageCountMax){
+      try {
+        for (let j = 0; j < images.length; j++) {
+          if(imageHtml.src == images[j].img.src) {
+            throw new Error("Duplicate");
+          }
+        }
 
-     const ratio = scalePreserveAspectRatio(imageHtml.width, imageHtml.height, dimensions.x ,dimensions.y);
-     images.push({
-       img: imageHtml,
-       w: imageHtml.width,
-       h: imageHtml.height,
-       newWidth: imageHtml.width * ratio / imageScl,
-       newHeight: imageHtml.height * ratio / imageScl
-     });
+        const ratio = scalePreserveAspectRatio(imageHtml.width, imageHtml.height, dimensions.x ,dimensions.y);
+        images.push({
+          img: imageHtml,
+          w: imageHtml.width,
+          h: imageHtml.height,
+          newWidth: imageHtml.width * ratio / imageScl,
+          newHeight: imageHtml.height * ratio / imageScl
+        });
 
-     setCount(images.length);
+        setCount(images.length);
 
-      if(initHandler) {
-        initHandler = false;
-        setHandler();
+        if(initHandler) {
+          initHandler = false;
+          setHandler();
+        }
+      } catch (error) {
+        console.log(error)
+        if(!local){
+          requestImage(controller.signal); 
+        }
       }
-    } catch (error) {
-       console.log(error)
-       if(!local){
-        requestImage(); 
-       }
     }
   });
 }
@@ -359,7 +360,6 @@ function updateScale() {
 
 canvas.addEventListener("dblclick", (e) => {
   local = !local;
-  controller.abort();
   reload();
 })
 
@@ -392,6 +392,9 @@ window.addEventListener('keydown', (e) => {
       break;
     case "Escape":
     case "Backspace":
+      reload();
+    case "KeyQ": 
+      local = !local;
       reload();
     default:
       break;
