@@ -48,9 +48,13 @@ section::-webkit-scrollbar {
     background-position: center center;
 }
 
-custom-marquee {
-    //background-color: white;
+
+@media only screen and (max-width: 660px) {
+    .hover-image {
+        width: calc(100% - 4rem); 
+    }
 }
+
 
 custom-icon {
     display: inline-block;
