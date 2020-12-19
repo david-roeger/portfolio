@@ -12,6 +12,7 @@ class customIcon extends HTMLElement {
         this.attributeObj = {
             fill : getAttrText('fill', this.attributes) || "black",
             width : getAttrText('width', this.attributes) || "2",
+            border : getAttrText('border', this.attributes) || "0",
             height : getAttrText('height', this.attributes) || "2",
             icon : getAttrText('type', this.attributes) || "default",
             iconStyle : document.createElement('style'),
@@ -38,6 +39,16 @@ class customIcon extends HTMLElement {
                 padding: 0;
             }
 
+            .wrapper {
+                width: ${this.attributeObj.width}rem;
+                height: ${this.attributeObj.height}rem;
+            }
+            .border{
+                width: calc(${this.attributeObj.width}rem - ${this.attributeObj.border * 2}px);
+                height: calc(${this.attributeObj.height}rem - ${this.attributeObj.border * 2}px);
+                border: ${this.attributeObj.border}px solid ${this.attributeObj.fill};;
+            }
+
             @keyframes spin {
                 0% {
                     transform: rotate(0deg); 
@@ -48,7 +59,6 @@ class customIcon extends HTMLElement {
             }
         `
 
-
         const animation = getAttrText('animation', this.attributes) || "";
         const animationArray = animation.split(" ");
 
@@ -58,9 +68,13 @@ class customIcon extends HTMLElement {
             this.attributeObj.img.className += ` ${animationArray[i]}`;
         }
 
+        const wrapper = document.createElement('div');
+        wrapper.className = this.attributes.border ? "wraper border" : "wrapper";
+        wrapper.appendChild(this.attributeObj.img) 
+
         this.shadowRoot.appendChild(this.attributeObj.iconStyle);      
         this.shadowRoot.appendChild(style);        
-        this.shadowRoot.appendChild(this.attributeObj.img);            
+        this.shadowRoot.appendChild(wrapper);            
     }
 
     static get observedAttributes() {
@@ -82,8 +96,9 @@ class customIcon extends HTMLElement {
 function setIconStyle(attributes) {
     return /*css*/`
     .icon {
-        width: ${attributes.width}rem;
-        height: ${attributes.height}rem;
+        position: relative;
+        width:100%;
+        height: 100%;
         background-color: ${attributes.fill};
         -webkit-mask: url(${url}/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
         mask: url(${url}/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
