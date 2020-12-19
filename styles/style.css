@@ -46,6 +46,13 @@ h1 {
     left: 2rem;
 }
 
+nav {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 98;
+}
+
 custom-marquee {
     z-index: 98;
     position: absolute;
@@ -113,23 +120,12 @@ input[type=range]::-webkit-slider-runnable-track {
     overflow: hidden;
 }
 
-
 @media only screen and (min-width: 1922px) {
     .container {
         border-left: 2px solid black;
         border-right: 2px solid black;
 
     }
-}
-
-.scroll {
-
-}
-
-.sticky {
-    position: sticky;
-    top: 0;
-    left: 0;
 }
 
 .circle {
@@ -148,6 +144,8 @@ input[type=range]::-webkit-slider-runnable-track {
 .border-top {
     border-top: 2px solid black;
 }
+
+
 
 a:focus {
     outline: none;
