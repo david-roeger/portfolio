@@ -1,19 +1,15 @@
-
 .container {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 3rem - 2px);
     position: relative;
     color: black;
     font-size: 1rem;
+    padding-bottom: calc(3rem + 2px);
 
-    overflow: hidden;
+    overflow-y: auto;
 
     display: grid;
-    grid-template: 2rem 2rem 2rem 1rem 1fr calc(3rem + 2px) / 2rem 2rem 2rem 1fr 2rem;
-}
-
-h1 {
-    grid-area: 2 / 2 / 3 / 3;
+    grid-template: 7rem 1fr/ 2rem 4rem 1fr 2rem;
 }
 
 p {
@@ -22,7 +18,7 @@ p {
 }
 
 section {
-    grid-area: 1 / 2 / 7 / 5;
+    grid-area: 2 / 2 / 3 / 4;
     position: relative;
     display: grid;
     place-items: center center;
@@ -39,9 +35,22 @@ section::-webkit-scrollbar {
     display: none;
 }
 
+.hover-image {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(120% - 4rem); 
+    max-width: calc(650px - 4rem);
+    height: 100%;
+    background-color: transparent;                                                      
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
 custom-marquee {
-    grid-area: 6 / 1 / 7 / 6;
-    display: inline;
+    //background-color: white;
 }
 
 custom-icon {
@@ -52,6 +61,5 @@ custom-image-hover {
     width: 100%;
     max-width: 650px;
     height: fit-content;
-    margin-bottom: 2rem;
-    
+    margin-bottom: 1rem;
 }
