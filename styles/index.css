@@ -1,4 +1,4 @@
-.container {
+.inner-container {
     width: 100%;
     height: calc(100% - 3rem - 2px);
     position: relative;
@@ -9,7 +9,7 @@
     overflow-y: auto;
 
     display: grid;
-    grid-template: 7rem 1fr/ 2rem 4rem 1fr 2rem;
+    grid-template: 7rem 1fr / 2rem 4rem 1fr 2rem;
 }
 
 p {
@@ -22,12 +22,6 @@ section {
     position: relative;
     display: grid;
     place-items: center center;
-}
-
-@media only screen and (max-width: 660px) {
-    section {
-        place-items: start center;
-    }
 }
 
 section::-webkit-scrollbar {
@@ -47,7 +41,6 @@ section::-webkit-scrollbar {
     background-size: contain;
     background-position: center center;
 }
-
 
 @media only screen and (max-width: 660px) {
     .hover-image {

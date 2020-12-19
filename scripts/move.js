@@ -221,7 +221,8 @@ function checkMotion() {
  */
 function moveHandler(e) {
   update = true;
-  xValue = e.clientX;
+  const windowOffset = window.innerWidth > 1920 ? (window.innerWidth -  1920) / 2 : 0;
+  xValue = e.clientX - windowOffset;
   yValue = e.clientY;
 }
 
@@ -232,8 +233,9 @@ function moveHandler(e) {
 function touchHandler(e) {
   if(e.target === canvas){
     update = true;
+    const windowOffset = window.innerWidth > 1920 ? (window.innerWidth -  1920) / 2 : 0;
     var touch = e.touches[0] || e.changedTouches[0];
-    xValue = touch.pageX;
+    xValue = touch.pageX - windowOffset;
     yValue = touch.pageY;
   }
 }

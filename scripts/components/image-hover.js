@@ -55,7 +55,7 @@ class customImageHover extends HTMLElement {
         inner.classList.add("inner-container");
 
         this.shadowRoot.appendChild(style);      
-        
+
         const hoverImage = document.querySelector(".hover-image");
         let randomOffset = 0;
 
@@ -75,7 +75,9 @@ class customImageHover extends HTMLElement {
             inner.addEventListener("touchstart", (e)  => {
                 console.log(e.path[0]);
                 var touch = e.touches[0] || e.changedTouches[0];
-                hoverImage.style.left = `${touch.pageX - (hoverImage.offsetWidth / 2)}px`;
+                const windowOffset = window.innerWidth > 1920 ? (window.innerWidth -  1920) / 2 : 0;
+                console.log(window.innerWidth, windowOffset);
+                hoverImage.style.left = `${touch.pageX - (hoverImage.offsetWidth / 2) - windowOffset}px`;
                 hoverImage.style.top = `${touch.pageY - (hoverImage.offsetHeight / 2)}px`;
                 console.log(e, e.clientX);
                 if(e.path[0] instanceof HTMLAnchorElement){
@@ -90,8 +92,10 @@ class customImageHover extends HTMLElement {
 
             inner.addEventListener("mousemove", (e) => {
                 hoverImage.offsetWidth;
-                hoverImage.offsetHeight;
-                hoverImage.style.left = `${e.clientX - (hoverImage.offsetWidth / 2)}px`;
+                hoverImage.offsetHeight
+                console.log(window.innerWidth, windowOffset);
+                const windowOffset = window.innerWidth > 1920 ? (window.innerWidth -  1920) / 2 : 0;
+                hoverImage.style.left = `${e.clientX - (hoverImage.offsetWidth / 2) - windowOffset}px`;
                 hoverImage.style.top = `${e.clientY - (hoverImage.offsetHeight / 2)}px`;
             })
 
