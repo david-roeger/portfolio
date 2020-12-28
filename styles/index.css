@@ -1,6 +1,6 @@
 .inner-container {
     width: 100%;
-    height: calc(100% - var(--var-line-height-m) - var(--var-border));
+    height: 100%;
     position: relative;
     color: black;
     font-size: var(--var-font-size-m);
@@ -8,10 +8,6 @@
 
     display: grid;
     grid-template: var(--var-padding-m) var(--var-icon-size-l) var(--var-padding-m) 1fr / var(--var-padding-m)  var(--var-icon-size-l) var(--var-padding-m) 1fr  var(--var-icon-size-l) var(--var-padding-m);
-}
-
-.inner-container.full {
-    height: 100%;
 }
 
 p {
