@@ -11,6 +11,7 @@ class customImageHover extends HTMLElement {
                 font-size: inherit;
                 letter-spacing: inherit;
                 box-sizing: border-box;
+                line-height: inherit;
                 color: inherit;
                 position: relative;
                 display: block;
@@ -22,18 +23,16 @@ class customImageHover extends HTMLElement {
                 z-index: 2;
                 display: block;
                 color: inherit;
-                line-height: 3rem;
-                text-align: center;
+                text-align: left;
+                padding: 0 var(--var-padding-m);
                 user-select: none;
+                border-bottom: var(--var-border) solid currentColor;
             }
 
             a:first-of-type {
-                padding-top: 0.5rem;
+                border-top: 2px solid currentColor;
             }
             
-            a:last-of-type {
-                padding-bottom: 0.5rem;
-            }
             
             a,
             a:hover > *,            
@@ -41,6 +40,11 @@ class customImageHover extends HTMLElement {
             a:focus > * {
                 text-decoration: none;
                 outline: none;
+            }
+
+            a:hover,
+            a:active {
+                font-style: italic;
             }
 
             .inner-container {
@@ -58,7 +62,6 @@ class customImageHover extends HTMLElement {
         let randomOffset = 0;
 
         if(inner.children.length){
-            console.log(hoverImage);
             for (let i = 0; i < inner.children.length; i++) {
                 const link = inner.children[i];
                 link.addEventListener("mouseenter", (e) => {
@@ -71,12 +74,10 @@ class customImageHover extends HTMLElement {
         this.shadowRoot.appendChild(inner);
         if(hoverImage){
             inner.addEventListener("touchstart", (e)  => {
-                console.log(e.path[0]);
                 var touch = e.touches[0] || e.changedTouches[0];
                 const windowOffset = window.innerWidth > 1922 ? (window.innerWidth -  1922) / 2 : 0;
                 hoverImage.style.left = `${touch.pageX - (hoverImage.offsetWidth / 2) - windowOffset}px`;
                 hoverImage.style.top = `${touch.pageY - (hoverImage.offsetHeight / 2)}px`;
-                console.log(e, e.clientX);
                 if(e.path[0] instanceof HTMLAnchorElement){
                     hoverImage.style.backgroundImage = `url(${e.path[0].attributes["hover-image"]?.value || ""})`;
                 }
@@ -108,20 +109,3 @@ class customImageHover extends HTMLElement {
 }
 
 customElements.define('custom-image-hover', customImageHover);
-
-
-/**
- * return text value from attribute
- * @param {string} attrToFind missing attr
- * @param {array} attrList list of attributes
- */
-function getAttrText(attrToFind, attrList) {
-    attrList = [...attrList];
-    for (let i = 0; i < attrList.length; i++) {
-        const attr = attrList[i];
-        if(attr.name === attrToFind) {
-            return attr.textContent;
-        }
-    }
-    return undefined;
-}

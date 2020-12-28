@@ -1,15 +1,17 @@
 .inner-container {
     width: 100%;
-    height: calc(100% - 3rem - 2px);
+    height: calc(100% - var(--var-line-height-m) - var(--var-border));
     position: relative;
     color: black;
-    font-size: 1rem;
-    padding-bottom: calc(3rem + 2px);
-
+    font-size: var(--var-font-size-m);
     overflow-y: auto;
 
     display: grid;
-    grid-template: 7rem 1fr / 2rem 4rem 1fr 2rem;
+    grid-template: var(--var-padding-m) var(--var-icon-size-l) var(--var-padding-m) 1fr / var(--var-padding-m)  var(--var-icon-size-l) var(--var-padding-m) 1fr  var(--var-icon-size-l) var(--var-padding-m);
+}
+
+.inner-container.full {
+    height: 100%;
 }
 
 p {
@@ -18,10 +20,10 @@ p {
 }
 
 section {
-    grid-area: 2 / 2 / 3 / 4;
+    grid-area: 4 / 1 / 5 / 7;
     position: relative;
     display: grid;
-    place-items: center center;
+    place-items: start center;
 }
 
 section::-webkit-scrollbar {
@@ -33,9 +35,8 @@ section::-webkit-scrollbar {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(120% - 4rem); 
-    max-width: calc(650px - 4rem);
-    height: 100%;
+    width: 50%; 
+    height: 50%;
     background-color: transparent;                                                      
     background-repeat: no-repeat;
     background-size: contain;
@@ -44,10 +45,15 @@ section::-webkit-scrollbar {
 
 @media only screen and (max-width: 660px) {
     .hover-image {
-        width: calc(100% - 4rem); 
+        width: calc(100% - (var(--var-padding-m) * 2)); 
     }
 }
 
+custom-marquee {
+    background-color: white;
+    font-size: var(--var-font-size-m);
+    line-height: var(--var-font-size-m);
+}
 
 custom-icon {
     display: inline-block;
@@ -55,7 +61,7 @@ custom-icon {
 
 custom-image-hover {
     width: 100%;
-    max-width: 650px;
     height: fit-content;
-    margin-bottom: 1rem;
+    font-size: var(--var-font-size-l);
+    line-height: var(--var-line-height-l);
 }

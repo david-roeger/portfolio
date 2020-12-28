@@ -1,0 +1,24 @@
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px"
+	 height="40px" viewBox="0 0 40 40" style="overflow:visible;enable-background:new 0 0 40 40;" xml:space="preserve">
+     <style>
+        circle,
+        path {
+            fill: #000000;
+        }
+        @media (prefers-color-scheme: dark) {
+            circle,
+            path {
+                fill: #ffffff;
+            }
+        }
+    </style>
+    <circle class="st0" cx="12" cy="14" r="2"/>
+    <circle class="st0" cx="28" cy="14" r="2"/>
+    <circle class="st0" cx="12" cy="20" r="2"/>
+    <circle class="st0" cx="28" cy="20" r="2"/>
+    <path class="st0" d="M20,32c-6.3,0-10.5-4.1-10.7-4.3c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0c0,0,3.8,3.7,9.3,3.7s9.3-3.7,9.3-3.7
+        c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4C30.5,27.9,26.3,32,20,32z"/>
+    <path class="st0" d="M20,0C9,0,0,9,0,20s9,20,20,20s20-9,20-20S31,0,20,0z M20,38c-9.9,0-18-8.1-18-18S10.1,2,20,2s18,8.1,18,18
+        S29.9,38,20,38z"/>
+</svg>

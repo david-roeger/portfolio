@@ -322,9 +322,9 @@ playButton.addEventListener('click', (e) => togglePlay());
 function togglePlay() {
   play = !play;
   if(play) {
-    playButton.setAttribute("type", "pause");
+    playButton.children[0].setAttribute("type", "pause");
   } else {
-    playButton.setAttribute("type", "play");
+    playButton.children[0].setAttribute("type", "play");
   }
 }
 

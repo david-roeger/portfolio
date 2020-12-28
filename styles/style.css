@@ -17,17 +17,64 @@ html,body {
 
 :root {
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     font-size: 20px;
     letter-spacing: 0.1rem;
     font-variant-numeric: tabular-nums;
+
+    --var-font-size-l: 6rem;
+    --var-font-size-m: 3rem;  
+
+    --var-line-height-l: 8rem;   
+    --var-line-height-m: 4.5rem;
+
+    --var-padding-l: 6rem;
+    --var-padding-m: 4rem;
+    --var-padding-s: 2rem;
+
+    --var-icon-size-l: 6rem;
+    --var-icon-size-m: 2rem;
+    --var-icon-size-s: 1rem;
+
+    --var-border: 2px;
+
+    --var-media-l: 1920px;
+    --var-media-m: 660px;
+    --var-media-s: 1920px;
+}
+
+
+@media only screen and (max-width: 1920px) {
+    :root {
+        --var-font-size-l: 4rem;
+        --var-font-size-m: 2rem;  
+
+        --var-line-height-l: 6rem;
+        --var-line-height-m: 3rem;
+
+        --var-icon-size-l: 3rem;
+        --var-icon-size-m: 2rem;
+
+        --var-padding-l: 4rem;
+        --var-padding-m: 2rem;
+        --var-padding-s: 0.75rem;
+    }
 }
 
 @media only screen and (max-width: 660px) {
     :root {
+        --var-font-size-l: 2rem;
+        --var-font-size-m: 1rem;  
+
+        --var-line-height-l: 4rem;
+        --var-line-height-m: 3rem;
+
+        --var-icon-size-l: 3rem;
+        --var-icon-size-m: 2rem;
+        --var-icon-size-s: 1.5rem;
+
         font-weight: 500;
-        font-size: 20px;
     }
 }
 
@@ -37,13 +84,21 @@ body {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--var-icon-size-l);
     margin: 0;
     padding: 0;
     z-index: 99;
     position: absolute;
-    top: 2rem;
-    left: 2rem;
+    top: var(--var-padding-m);
+    left: var(--var-padding-m);
+}
+
+a,
+a:hover,
+a:active,
+a:visited
+ {
+    color: black;
 }
 
 custom-nav {
@@ -58,6 +113,15 @@ custom-marquee {
     position: absolute;
     bottom: 0;
     left: 0;
+    height: fit-content;
+
+    transition: transform 0.2s linear;
+    transform: translateY(0%);
+
+}
+
+custom-marquee.hide {
+    transform: translateY(100%);
 }
 
 input[type=range] {
@@ -95,8 +159,8 @@ input[type=range]::-moz-range-thumb {
   
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 2px;
-    border-radius: 1px;
+    height: var(--var-border);
+    border-radius: calc(var(--var-border) / 2);
     cursor: pointer;
     background: black;
     border: none;
@@ -104,10 +168,10 @@ input[type=range]::-webkit-slider-runnable-track {
 
   input[type=range]::-moz-range-track {
     width: 100%;
-    height: 2px;
+    height: var(--var-border);
+    border-radius: calc(var(--var-border) / 2);
     cursor: pointer;
     background: black;
-    border-radius: 1px;
     border: none;
 }
 
@@ -120,10 +184,10 @@ input[type=range]::-webkit-slider-runnable-track {
     overflow: hidden;
 }
 
-@media only screen and (min-width: 1922px) {
+@media only screen and (min-width: 1924px) {
     .container {
-        border-left: 2px solid black;
-        border-right: 2px solid black;
+        border-left: var(--var-border) solid black;
+        border-right: var(--var-border) solid black;
 
     }
 }
@@ -138,14 +202,27 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 .border {
-    border: 2px solid black;
+    border: var(--var-border) solid black;
 }
 
 .border-top {
-    border-top: 2px solid black;
+    border-top: var(--var-border) solid black;
 }
 
+.border-vertical {
+    border-top: var(--var-border) solid black;
+    border-bottom: var(--var-border) solid black;
+}
 
+.border-vertical {
+    border-top:var(--var-border) solid black;
+    border-bottom: var(--var-border) solid black;
+}
+
+.border-horizontal {
+    border: var(--var-border) solid black;
+    border: var(--var-border) solid black;
+}
 
 a:focus {
     outline: none;

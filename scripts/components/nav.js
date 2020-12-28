@@ -1,3 +1,5 @@
+
+import { getAttrText } from './modules/utils.js';
 class customNav extends HTMLElement {
     constructor() {
         super();
@@ -11,11 +13,15 @@ class customNav extends HTMLElement {
                 font-size: inherit;
                 letter-spacing: inherit;
                 box-sizing: border-box;
-
             }
 
             nav {
-                                                                                                                                          
+                width: fit-content;
+                height: fit-content;                                                                                                                           
+            }
+
+            nav:hover {
+                cursor: pointer;
             }
         `       
 
@@ -27,15 +33,5 @@ class customNav extends HTMLElement {
 
     }
 }
-
-function getAttrText(attrToFind, attrList) {
-    for (let i = 0; i < attrList.length; i++) {
-        const attr = attrList[i];
-        if(attr.name === attrToFind) {
-            return attr.textContent;  
-        }
-    }
-    return undefined;
-};
 
 customElements.define('custom-nav', customNav);

@@ -1,4 +1,4 @@
-import {map, constrain } from './modules/utils.js';
+import {map, constrain,  getAttrText } from './modules/utils.js';
 
 class customFace extends HTMLElement {
     constructor() {
@@ -162,20 +162,3 @@ class customFace extends HTMLElement {
 }
 
 customElements.define('custom-face', customFace);
-
-
-/**
- * return text value from attribute
- * @param {string} attrToFind missing attr
- * @param {array} attrList list of attributes
- */
-function getAttrText(attrToFind, attrList) {
-    attrList = [...attrList];
-    for (let i = 0; i < attrList.length; i++) {
-        const attr = attrList[i];
-        if(attr.name === attrToFind) {
-            return attr.textContent;
-        }
-    }
-    return undefined;
-}

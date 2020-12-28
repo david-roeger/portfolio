@@ -1,3 +1,5 @@
+import { getAttrText } from './modules/utils.js';
+
 let url = '';
 const pathArray = window.location.pathname.split( '/' );
 if(pathArray[1] && pathArray[1].includes('~')) {
@@ -11,9 +13,9 @@ class customIcon extends HTMLElement {
         this.attachShadow({mode: 'open'});
         this.attributeObj = {
             fill : getAttrText('fill', this.attributes) || "black",
-            width : getAttrText('width', this.attributes) || "2",
-            border : getAttrText('border', this.attributes) || "0",
-            height : getAttrText('height', this.attributes) || "2",
+            width : getAttrText('width', this.attributes) || "var(--var-icon-size-m)",
+            border : getAttrText('border', this.attributes) || "0px",
+            height : getAttrText('height', this.attributes) || "var(--var-icon-size-m)",
             icon : getAttrText('type', this.attributes) || "default",
             iconStyle : document.createElement('style'),
             img :  document.createElement('div'),
@@ -40,13 +42,13 @@ class customIcon extends HTMLElement {
             }
 
             .wrapper {
-                width: ${this.attributeObj.width}rem;
-                height: ${this.attributeObj.height}rem;
+                width: ${this.attributeObj.width};
+                height: ${this.attributeObj.height};
             }
             .border{
-                width: calc(${this.attributeObj.width}rem - ${this.attributeObj.border * 2}px);
-                height: calc(${this.attributeObj.height}rem - ${this.attributeObj.border * 2}px);
-                border: ${this.attributeObj.border}px solid ${this.attributeObj.fill};;
+                width: calc(${this.attributeObj.width} - ${this.attributeObj.border * 2});
+                height: calc(${this.attributeObj.height} - ${this.attributeObj.border * 2});
+                border: ${this.attributeObj.border} solid ${this.attributeObj.fill};;
             }
 
             @keyframes spin {
@@ -105,16 +107,5 @@ function setIconStyle(attributes) {
     }
 `
 }
-
-function getAttrText(attrToFind, attrList) {
-    attrList = [...attrList];
-    for (let i = 0; i < attrList.length; i++) {
-        const attr = attrList[i];
-        if(attr.name === attrToFind) {
-            return attr.textContent;
-        }
-    }
-    return undefined;
-};
 
 customElements.define('custom-icon', customIcon);

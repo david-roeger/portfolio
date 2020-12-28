@@ -8,6 +8,8 @@
     <meta name="keywords" content="Art, Design, Visuals, Experience">
     <meta name="author" content="David Roeger">
 
+    <link rel="icon" href="../assets/icons/logo.svg">
+    <link rel="mask-icon" href="../assets/icons/logo.svg" color="#000000">
 
     <link rel="preconnect" href="https://use.typekit.net/ehf1hbv.css">
 
@@ -20,12 +22,12 @@
     <script type="module" crossorigin src="../scripts/components/marquee.js"></script>
     <script type="module" crossorigin src="../scripts/components/logo.js"></script>
     <script type="module" crossorigin src="../scripts/components/icon.js"></script>
-    <script type="module" src="../scripts/move.js" defer></script>
+    <script type="module" crossorigin src="../scripts/move.js" defer></script>
 
     <title>Move</title>
 </head>
 <body>
-    <div class="container">
+    <custom-overlay-container class="container">
         <h1>
             <custom-face title="Startseite">
                 <custom-icon width="2" height="2" type="default"></custom-icon>
@@ -34,7 +36,9 @@
         <div class="inner-container">
             <div class="canvas-container"></div>
             <custom-icon class="loading" width="2" height="2" fill="black" type="smile" animation="spin" duration="1"></custom-icon>
-            <span class="info border">i</span>
+            <custom-overlay-button class="info border">
+                <span>i</span>
+            </custom-overlay-button>
             <span class="preview border"></span>
             <span class="count border">0</span>
             <div class="button-container">
@@ -42,15 +46,26 @@
                     <input type="range" min="1" max="5" value="3">
                 </div>
                 <div class="row">
-                    <a href="#" id="download" crossOrigin download="mosaik.png">
-                        <custom-icon border="2" width="2" height="2" type="arrow-down"></custom-icon> 
-                    </a>
-                    <custom-icon border="2" id="delete" width="2" height="2" type="close"></custom-icon>
-                    <custom-icon border="2" id="play" width="2" height="2" type="pause"></custom-icon>
-                    <custom-icon border="2" id="next" width="2" height="2" type="arrow-right"></custom-icon> 
+                    <custom-button class="border">
+                        <a href="#" id="download" crossOrigin download="mosaik.png">
+                            <custom-icon width="2" height="2" type="arrow-down"></custom-icon> 
+                        </a> 
+                    </custom-button>
+                  
+                    <custom-button class="border" id="delete">
+                        <custom-icon width="2" height="2" type="close"></custom-icon>
+                    </custom-button>
+
+                    <custom-button class="border" id="play">
+                        <custom-icon width="2" height="2" type="pause"></custom-icon>  
+                    </custom-button>
+
+                    <custom-button class="border" id="next">
+                        <custom-icon width="2" height="2" type="arrow-right"></custom-icon> 
+                    </custom-button>
                 </div>
             </div>
         </div>
-    </div>
+    </custom-overlay-container>
 </body>
 </html>

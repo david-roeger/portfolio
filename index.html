@@ -8,6 +8,9 @@
     <meta name="keywords" content="Art, Design, Visuals, Experience">
     <meta name="author" content="David Roeger">
 
+    <link rel="icon" href="assets/icons/logo.svg">
+    <link rel="mask-icon" href="assets/icons/logo.svg" color="#000000">
+
     <link rel="preconnect" href="https://use.typekit.net/ehf1hbv.css">
 
     <link href="styles/normalize.css" rel="stylesheet" type="text/css">
@@ -16,12 +19,16 @@
     
     <link href="styles/animations.css" rel="stylesheet" type="text/css">
 
-
     <script type="module" crossorigin src="scripts/components/icon.js"></script>
     <script type="module" crossorigin src="scripts/components/logo.js"></script>
+    <script type="module" crossorigin src="scripts/components/logo.js"></script>
+    <script type="module" crossorigin src="scripts/components/button.js"></script>
     <script type="module" crossorigin src="scripts/components/nav.js"></script>
     <script type="module" crossorigin src="scripts/components/marquee.js"></script>
     <script type="module" crossorigin src="scripts/components/image-hover.js"></script>
+
+    <script type="module" crossorigin src="scripts/index.js" defer></script>
+    
 
     <title>Portfolio</title>
 </head>
@@ -29,32 +36,40 @@
     <div class="container">
         <h1>
             <custom-face title="Moving Parts" href="work/move.html">
-                <custom-icon width="2" height="2" type="default"></custom-icon>
+                <custom-icon width="var(--var-icon-size-l)" height="var(--var-icon-size-l)" type="default"></custom-icon>
             </custom-face>
         </h1>
-        <custom-nav>
-            <custom-icon width="2" height="2" border="2" type="menu"/>   
+        <custom-nav class="border">
+
+            <custom-icon width="" type="menu"/>   
         </custom-nav>
         <div class="inner-container">
             <section>
-                <custom-image-hover class="border">
+                <custom-image-hover >
                     <a href="#" hover-image="assets/images/move/0.png">Projekt 01</a>
                     <a href="#" hover-image="assets/images/move/1.png">Projekt 02</a>
                     <a href="#" hover-image="assets/images/move/2.png">Projekt 03</a> 
-                    <a href="#" hover-image="assets/images/move/3.png">Projekt 04</a> 
-                    <a href="work/move.html" hover-image="assets/images/move/0.png">Visuelle Experimente</a>
+                    <a href="#" hover-image="assets/images/move/3.png">Projekt 04</a>
+                    <a href="work/move.html" hover-image="assets/images/move/0.png">Experimental</a>
                 </custom-image-hover>
             </section>
         </div>
         <div class="hover-image"></div>
-        <custom-marquee duration="15" height="3" animation="move" repeat="true">
-            <span>Talk to me</span>
-            <span>/</span>
-            <span>Or hire me</span>   
-            <span>/</span>
-            <span>Or get access to my secret meme archive</span>
-                <custom-icon width="2" height="2" type="smile" animation="spin"/>   
-        </custom-marquee>
+        <a href="work/move.html">
+            <custom-marquee class="hide" duration="15" animation="move" repeat="true" close>
+                <span>Talk to me</span>
+                <span>/</span>
+                <span>Or hire me</span>   
+                <span>/</span>
+                <span>Or get access to my secret meme archive</span>
+                <custom-icon width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" type="smile" animation="spin"></custom-icon>
+                <div class="closeButton">
+                    <custom-button class="border">
+                        <custom-icon width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" type="close"></custom-icon>
+                    </custom-button>
+                </div>
+            </custom-marquee>
+        </a>
     </div>
 </body>
 </html>
