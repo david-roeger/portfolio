@@ -191,6 +191,10 @@ input[type=range]::-webkit-slider-runnable-track {
     }
 }
 
+.italic {
+    font-style: italic;
+}
+
 .circle {
     border-radius: 50%;
     transition: border-radius 0.1s linear;
