@@ -1,3 +1,4 @@
+import { hasAttr } from './modules/utils.js';
 import { map } from './modules/utils.js';
 class customImageHover extends HTMLElement {
 
@@ -5,6 +6,8 @@ class customImageHover extends HTMLElement {
         super();
 
         this.attachShadow({mode: 'open'});
+
+        const offset = hasAttr('offset', this.attributes);
         
         const style = document.createElement('style');
         style.textContent = /*css*/`
@@ -102,7 +105,7 @@ class customImageHover extends HTMLElement {
 
         function setHoverImagePos(x, y) {
             const windowOffset = window.innerWidth > 1924 ? (window.innerWidth -  1924) / 2 : 0;
-            const xOff = map(x, windowOffset, window.innerWidth - windowOffset, windowOffset + (window.innerWidth - windowOffset) / 4,  window.innerWidth - windowOffset * 2)
+            const xOff = offset ? map(x, windowOffset, window.innerWidth - windowOffset, windowOffset + (window.innerWidth - windowOffset) / 4,  window.innerWidth - windowOffset * 2) : x;
             hoverImage.style.left = `${xOff - (hoverImage.offsetWidth / 2)}px`;
             hoverImage.style.top = `${y - (hoverImage.offsetHeight / 2)}px`;
         }
