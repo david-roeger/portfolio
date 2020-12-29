@@ -10,6 +10,12 @@
     grid-template: var(--var-padding-m) var(--var-icon-size-l) var(--var-padding-m) 1fr / var(--var-padding-m)  var(--var-icon-size-l) var(--var-padding-m) 1fr  var(--var-icon-size-l) var(--var-padding-m);
 }
 
+@media only screen and (max-width: 1920px) {
+    .inner-container {
+    grid-template: var(--var-padding-m) var(--var-icon-size-l) var(--var-padding-m) 1fr / var(--var-padding-m)  var(--var-icon-size-l) var(--var-padding-m) 1fr  var(--var-icon-size-l) var(--var-padding-m);
+    }
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -20,7 +26,9 @@ section {
     position: relative;
     display: grid;
     place-items: start center;
+    margin-bottom: var(--var-padding-m);
 }
+
 
 section::-webkit-scrollbar {
     display: none;
@@ -31,17 +39,25 @@ section::-webkit-scrollbar {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%; 
-    height: 50%;
+    width: 60%; 
+    height: 60%;
     background-color: transparent;                                                      
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
 }
 
+@media only screen and (max-width: 1920px) {
+    .hover-image {
+        width: 80%;
+        height: 80%; 
+    }
+}
+
 @media only screen and (max-width: 660px) {
     .hover-image {
         width: calc(100% - (var(--var-padding-m) * 2)); 
+        height: 100%; 
     }
 }
 

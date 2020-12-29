@@ -1,3 +1,4 @@
+import { map } from './modules/utils.js';
 class customImageHover extends HTMLElement {
 
     constructor() {
@@ -59,7 +60,6 @@ class customImageHover extends HTMLElement {
         this.shadowRoot.appendChild(style);      
 
         const hoverImage = document.querySelector(".hover-image");
-        let randomOffset = 0;
 
         if(inner.children.length){
             for (let i = 0; i < inner.children.length; i++) {
@@ -75,9 +75,7 @@ class customImageHover extends HTMLElement {
         if(hoverImage){
             inner.addEventListener("touchstart", (e)  => {
                 var touch = e.touches[0] || e.changedTouches[0];
-                const windowOffset = window.innerWidth > 1922 ? (window.innerWidth -  1922) / 2 : 0;
-                hoverImage.style.left = `${touch.pageX - (hoverImage.offsetWidth / 2) - windowOffset}px`;
-                hoverImage.style.top = `${touch.pageY - (hoverImage.offsetHeight / 2)}px`;
+                setHoverImagePos(touch.pageX, touch.pageY);
                 if(e.path[0] instanceof HTMLAnchorElement){
                     hoverImage.style.backgroundImage = `url(${e.path[0].attributes["hover-image"]?.value || ""})`;
                 }
@@ -89,11 +87,7 @@ class customImageHover extends HTMLElement {
             }, {passive: true});
 
             inner.addEventListener("mousemove", (e) => {
-                hoverImage.offsetWidth;
-                hoverImage.offsetHeight
-                const windowOffset = window.innerWidth > 1922 ? (window.innerWidth -  1922) / 2 : 0;
-                hoverImage.style.left = `${e.clientX - (hoverImage.offsetWidth / 2) - windowOffset}px`;
-                hoverImage.style.top = `${e.clientY - (hoverImage.offsetHeight / 2)}px`;
+                setHoverImagePos(e.clientX, e.clientY);
             })
 
             inner.addEventListener("mouseleave", (e) => {
@@ -104,6 +98,13 @@ class customImageHover extends HTMLElement {
                 hoverImage.style.backgroundImage = "";
 
             });
+        }
+
+        function setHoverImagePos(x, y) {
+            const windowOffset = window.innerWidth > 1924 ? (window.innerWidth -  1924) / 2 : 0;
+            const xOff = map(x, windowOffset, window.innerWidth - windowOffset, windowOffset + (window.innerWidth - windowOffset) / 4,  window.innerWidth - windowOffset * 2)
+            hoverImage.style.left = `${xOff - (hoverImage.offsetWidth / 2)}px`;
+            hoverImage.style.top = `${y - (hoverImage.offsetHeight / 2)}px`;
         }
     }
 }
