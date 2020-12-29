@@ -69,6 +69,7 @@ class customImageHover extends HTMLElement {
                 const link = inner.children[i];
                 link.addEventListener("mouseenter", (e) => {
                     hoverImage.style.backgroundImage = `url(${link.attributes["hover-image"]?.value || ""})`;
+                    console.log(link);
                 })
             }
         }
@@ -81,6 +82,7 @@ class customImageHover extends HTMLElement {
                 setHoverImagePos(touch.pageX, touch.pageY);
                 if(e.path[0] instanceof HTMLAnchorElement){
                     hoverImage.style.backgroundImage = `url(${e.path[0].attributes["hover-image"]?.value || ""})`;
+                    console.log(e.path[0]);
                 }
             }, {passive: true});
 
@@ -105,7 +107,9 @@ class customImageHover extends HTMLElement {
 
         function setHoverImagePos(x, y) {
             const windowOffset = window.innerWidth > 1924 ? (window.innerWidth -  1924) / 2 : 0;
-            const xOff = offset ? map(x, windowOffset, window.innerWidth - windowOffset, windowOffset + (window.innerWidth - windowOffset) / 4,  window.innerWidth - windowOffset * 2) : x;
+            const xOffParam = window.innerWidth > 622 ? 4 : 2;
+            console.log(xOffParam);
+            const xOff = offset ? map(x, windowOffset, window.innerWidth - windowOffset, windowOffset + (window.innerWidth - windowOffset) / xOffParam,  window.innerWidth - windowOffset * 2) : x;
             hoverImage.style.left = `${xOff - (hoverImage.offsetWidth / 2)}px`;
             hoverImage.style.top = `${y - (hoverImage.offsetHeight / 2)}px`;
         }
