@@ -237,7 +237,7 @@ function touchHandler(e) {
   if(e.target === canvas){
     update = true;
     const windowOffset = window.innerWidth > 1922 ? (window.innerWidth -  1922) / 2 : 0;
-    var touch = e.touches[0] || e.changedTouches[0];
+    let touch = e.touches[0] || e.changedTouches[0];
     xValue = touch.pageX - windowOffset;
     yValue = touch.pageY;
   }
@@ -310,7 +310,7 @@ function updateImage() {
  */
 const downloadButton = document.getElementById("download");
 downloadButton.addEventListener('click', () => {
-  var dataURL = canvas.toDataURL('image/png');
+  let dataURL = canvas.toDataURL('image/png');
   downloadButton.href = dataURL;
 });
 

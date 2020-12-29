@@ -113,7 +113,7 @@ class customFace extends HTMLElement {
         */
         function touchHandler(e) {
             update = true;
-            var touch = e.touches[0] || e.changedTouches[0];
+            let touch = e.touches[0] || e.changedTouches[0];
             xValue = touch.pageX;
             xValue = map(xValue, 0, window.innerWidth, gamma.min, gamma.max)
         }

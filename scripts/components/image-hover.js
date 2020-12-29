@@ -78,14 +78,13 @@ class customImageHover extends HTMLElement {
         this.shadowRoot.appendChild(inner);
         if(hoverImage){
             inner.addEventListener("touchstart", (e)  => {
-                var touch = e.touches[0] || e.changedTouches[0];
+                let touch = e.touches[0] || e.changedTouches[0];
                 setHoverImagePos(touch.pageX, touch.pageY);
                 if(e.path[0] instanceof HTMLAnchorElement){
                     hoverImage.style.backgroundImage = `url(${e.path[0].attributes["hover-image"]?.value || ""})`;
                     console.log(e.path[0]);
                 }
             }, {passive: true});
-
 
             inner.addEventListener("touchcancel", (e)  => {
                 hoverImage.style.backgroundImage = "";
