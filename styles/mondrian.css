@@ -1,0 +1,101 @@
+.inner-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: black;
+    display: grid;
+    font-weight: 500;
+
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: var(--var-padding-s);
+    background-color: black;
+}
+
+@media only screen and (min-width: 1924px) {
+    .inner-container {
+        padding: calc(var(--var-padding-s) - (var(--var-border) * 2))
+    }
+}
+.mondrian.white {
+    background-color: white;
+}
+
+.mondrian.red {
+    background-color: #dd0100;
+}
+
+.mondrian.blue {
+    background-color: #225095;
+}
+
+.mondrian.yellow {
+    background-color: #fac901;
+}
+
+.mondrian:nth-child(1) {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.mondrian:nth-child(2) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+.mondrian:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 7;
+}
+
+.mondrian:nth-child(4) {
+    grid-column: span 4;
+    grid-row: span 4;
+}
+
+
+.mondrian:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 4;
+}
+
+
+.mondrian:nth-child(6) {
+    grid-column: span 3;
+    grid-row: span 6;
+}
+
+.mondrian:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.mondrian:nth-child(8) {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+.mondrian:nth-child(9) {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.mondrian:nth-child(10) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.mondrian:nth-child(11) {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.mondrian:nth-child(12) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+@media (orientation: landscape) {
+    
+
+  }
