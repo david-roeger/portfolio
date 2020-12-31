@@ -14,7 +14,7 @@ class customIcon extends HTMLElement {
         this.attributeObj = {
             fill : getAttrText('fill', this.attributes) || "black",
             width : getAttrText('width', this.attributes) || "var(--var-icon-size-m)",
-            border : getAttrText('border', this.attributes) || "0px",
+            border : getAttrText('border', this.attributes) || "var(--var-border)",
             height : getAttrText('height', this.attributes) || "var(--var-icon-size-m)",
             icon : getAttrText('type', this.attributes) || "default",
             iconStyle : document.createElement('style'),

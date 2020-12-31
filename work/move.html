@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="David interactive Portfolio">
-    <meta name="keywords" content="Art, Design, Visuals, Experience">
+    <meta name="keywords" content="Art, Design, Visuals, Experimental">
     <meta name="author" content="David Roeger">
 
     <link rel="icon" href="../assets/icons/logo.svg">
@@ -19,7 +19,6 @@
 
     <link href="../styles/animations.css" rel="stylesheet" type="text/css">
 
-    <script type="module" crossorigin src="../scripts/components/marquee.js"></script>
     <script type="module" crossorigin src="../scripts/components/logo.js"></script>
     <script type="module" crossorigin src="../scripts/components/icon.js"></script>
     <script type="module" crossorigin src="../scripts/move.js" defer></script>
@@ -27,18 +26,18 @@
     <title>Move</title>
 </head>
 <body>
-    <custom-overlay-container class="container">
+    <div class="container">
         <h1>
             <custom-face title="Startseite">
-                <custom-icon width="2" height="2" type="default"></custom-icon>
+                <custom-icon width="var(--var-icon-size-l)" height="var(--var-icon-size-l)" type="default"></custom-icon>
             </custom-face>
         </h1>
         <div class="inner-container">
             <div class="canvas-container"></div>
-            <custom-icon class="loading" width="2" height="2" fill="black" type="smile" animation="spin" duration="1"></custom-icon>
-            <custom-overlay-button class="info border">
+            <custom-icon class="loading" width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" fill="black" type="smile" animation="spin" duration="1"></custom-icon>
+            <custom-button  class="info border">
                 <span>i</span>
-            </custom-overlay-button>
+            </custom-button >
             <span class="preview border"></span>
             <span class="count border">0</span>
             <div class="button-container">
@@ -48,24 +47,24 @@
                 <div class="row">
                     <custom-button class="border">
                         <a href="#" id="download" crossOrigin download="mosaik.png">
-                            <custom-icon width="2" height="2" type="arrow-down"></custom-icon> 
+                            <custom-icon width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" type="arrow-down"></custom-icon> 
                         </a> 
                     </custom-button>
                   
                     <custom-button class="border" id="delete">
-                        <custom-icon width="2" height="2" type="close"></custom-icon>
+                        <custom-icon width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" type="close"></custom-icon>
                     </custom-button>
 
                     <custom-button class="border" id="play">
-                        <custom-icon width="2" height="2" type="pause"></custom-icon>  
+                        <custom-icon width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" type="pause"></custom-icon>  
                     </custom-button>
 
                     <custom-button class="border" id="next">
-                        <custom-icon width="2" height="2" type="arrow-right"></custom-icon> 
+                        <custom-icon width="var(--var-icon-size-m)" height="var(--var-icon-size-m)" type="arrow-right"></custom-icon> 
                     </custom-button>
                 </div>
             </div>
         </div>
-    </custom-overlay-container>
+    </div>
 </body>
 </html>

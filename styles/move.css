@@ -4,36 +4,35 @@
     position: relative;
     color: black;
     display: grid;
-    grid-template: 2rem 2rem 2rem 2rem 1fr calc(6.5rem + 2px)/ 2rem 2rem 1fr 2rem 2rem 2rem 2rem;
+    grid-template: var(--var-padding-m) var(--var-padding-m) var(--var-padding-m) var(--var-padding-m) 1fr auto / var(--var-padding-m) var(--var-icon-size-l) var(--var-padding-m) 1fr var(--var-padding-m) var(--var-padding-m) var(--var-padding-m) var(--var-padding-m);
     font-weight: 500;
 }
 
-h1 {
-    grid-area: 2 / 2 / 3 / 3 ;
-}
 
 .info {
-    grid-area: 2 / 4 / 3 / 5;
+    grid-area: 2 / 5 / 3 / 6;
 }
 
 .preview {
-    grid-area: 2 / 6 / 3 / 7;
+    grid-area: 2 / 7 / 3 / 8;
 }
 
 .count {
-    grid-area: 4 / 6 / 5 / 7;
+    grid-area: 4 / 7 / 5 / 8;
 
 }
 
 .canvas-container {
-    grid-area: 1 / 1 / 7 / 8;
+    grid-area: 1 / 1 / 7 / 9;
     z-index: 1;
 }
 
 .button-container {
-    grid-area: 6 / 1 / 7 / 8;
+    grid-area: 6 / 1 / 7 / 9;
     z-index: 2;
-    border-top: 2px solid black;
+    border-top: var(--var-border) solid black;
+    height: fit-content;
+    padding-bottom: var(--var-padding-s);
 }
 
 .button-container .row {
@@ -55,9 +54,8 @@ h1 {
 .preview,
 .count {
     z-index: 3;
-    width: calc(2rem - 4px);
-    height: calc(2rem - 4px);
-    line-height: calc(2rem - 4px);
+    font-size: var(--var-font-size-s);
+    line-height: var(--var-padding-m);
     user-select: none;
     text-align: center;
     position: relative;

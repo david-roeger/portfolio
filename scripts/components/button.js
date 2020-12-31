@@ -1,5 +1,3 @@
-import { getAttrText, getAttrObj } from './modules/utils.js';
-
 class customButton extends HTMLElement {
     constructor() {
         super();
@@ -18,7 +16,7 @@ class customButton extends HTMLElement {
             }
 
             :host(.border) {
-                border: 2px solid black;
+                border: var(--var-border) solid black;
             }
 
             button {

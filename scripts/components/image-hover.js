@@ -34,7 +34,7 @@ class customImageHover extends HTMLElement {
             }
 
             a:first-of-type {
-                border-top: 2px solid currentColor;
+                border-top: var(--var-border) solid currentColor;
             }
             
             

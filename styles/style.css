@@ -24,16 +24,17 @@ html,body {
     font-variant-numeric: tabular-nums;
 
     --var-font-size-l: 6rem;
-    --var-font-size-m: 3rem;  
+    --var-font-size-m: 2rem;  
+    --var-font-size-s: 1.5rem;
 
     --var-line-height-l: 8rem;   
-    --var-line-height-m: 4.5rem;
+    --var-line-height-m: 4rem;
 
     --var-padding-l: 6rem;
     --var-padding-m: 4rem;
-    --var-padding-s: 2rem;
+    --var-padding-s: 1rem;
 
-    --var-icon-size-l: 6rem;
+    --var-icon-size-l: 4rem;
     --var-icon-size-m: 2rem;
     --var-icon-size-s: 1rem;
 
@@ -49,6 +50,7 @@ html,body {
     :root {
         --var-font-size-l: 4rem;
         --var-font-size-m: 2rem;  
+        --var-font-size-s: 1rem;
 
         --var-line-height-l: 6rem;
         --var-line-height-m: 3rem;
@@ -65,10 +67,26 @@ html,body {
 @media only screen and (max-width: 660px) {
     :root {
         --var-font-size-l: 2rem;
-        --var-font-size-m: 1rem;  
+        --var-font-size-m: 1rem;
 
         --var-line-height-l: 4rem;
-        --var-line-height-m: 3rem;
+        --var-line-height-m: 1.6rem;
+
+        --var-icon-size-l: 2rem;
+        --var-icon-size-m: 2rem;
+        --var-icon-size-s: 1.5rem;
+
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    :root {
+        --var-font-size-l: 2rem;
+        --var-font-size-m: 0.8rem;  
+
+        --var-line-height-l: 4rem;
+        --var-line-height-m: 1.4rem;
 
         --var-icon-size-l: 3rem;
         --var-icon-size-m: 2rem;
