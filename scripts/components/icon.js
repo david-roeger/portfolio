@@ -1,9 +1,10 @@
 import { getAttrText } from './modules/utils.js';
 
 let url = '';
-const pathArray = window.location.pathname.split( '/' );
+let pathArray = window.location.pathname.split( '/' );
+pathArray =  pathArray.filter(path => path !== "");
 console.log(pathArray);
-for (let i = 0; i < pathArray.length - 2; i++) {
+for (let i = 0; i < pathArray.length - 1; i++) {
     url += "../"
 }
 
