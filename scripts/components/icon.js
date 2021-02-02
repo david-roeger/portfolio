@@ -1,10 +1,10 @@
 import { getAttrText } from './modules/utils.js';
 
-let url = '.';
+let url = '';
 const pathArray = window.location.pathname.split( '/' );
 console.log(pathArray);
-if(pathArray[1] && pathArray[1].includes('~')) {
-    url += `/${pathArray[1]}`
+for (let i = 0; i < pathArray.length - 2; i++) {
+    url += "../"
 }
 
 class customIcon extends HTMLElement {
@@ -103,8 +103,8 @@ function setIconStyle(attributes) {
         width:100%;
         height: 100%;
         background-color: ${attributes.fill};
-        -webkit-mask: url(${url}/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
-        mask: url(${url}/assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
+        -webkit-mask: url(${url}assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
+        mask: url(${url}assets/icons/${attributes.icon || "default" }.svg) center / contain no-repeat;
     }
 `
 }
