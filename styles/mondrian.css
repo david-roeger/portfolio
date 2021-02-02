@@ -8,8 +8,15 @@
 
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(9, 1fr);
+    
     gap: var(--var-padding-s);
     background-color: black;
+}
+
+@media only screen and (orientation : portrait) {
+    .inner-container {
+        writing-mode: vertical-lr;
+    }
 }
 
 @media only screen and (min-width: 1924px) {
