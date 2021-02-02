@@ -3,7 +3,7 @@ import { getAttrText } from './modules/utils.js';
 let url = '';
 const pathArray = window.location.pathname.split( '/' );
 if(pathArray[1] && pathArray[1].includes('~')) {
-    url += `/${pathArray[1]}`
+    url += `./${pathArray[1]}`
 }
 
 class customIcon extends HTMLElement {
