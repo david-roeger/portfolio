@@ -4,7 +4,7 @@ let url = '';
 let pathArray = window.location.pathname.split( '/' );
 pathArray =  pathArray.filter(path => path !== "" && !path.includes(".html"));
 console.log(pathArray);
-for (let i = 0; i < pathArray.length; i++) {
+for (let i = 0; i < pathArray.length - 1; i++) {
     url += "../"
 }
 
