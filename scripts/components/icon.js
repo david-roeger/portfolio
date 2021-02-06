@@ -4,13 +4,21 @@ let url = '';
 let pathArray = window.location.pathname.split( '/' );
 pathArray =  pathArray.filter(path => path !== "");
 if(pathArray.length) {
+    //remove site.html
     pathArray.pop();
 }
 console.log(pathArray);
+
+console.log(window.location.protocol);
+if (window.location.protocol == "https:" && pathArray.length) {
+    console.log("http");
+    //remove /portfolio
+    pathArray.pop();
+}
+
 for (let i = 0; i < pathArray.length; i++) {
     url += "../"
 }
-console.log(url);
 
 class customIcon extends HTMLElement {
     constructor() {
