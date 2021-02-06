@@ -10,6 +10,7 @@ console.log(pathArray);
 for (let i = 0; i < pathArray.length; i++) {
     url += "../"
 }
+console.log(url);
 
 class customIcon extends HTMLElement {
     constructor() {
