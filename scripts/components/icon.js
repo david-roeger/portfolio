@@ -7,13 +7,6 @@ if(pathArray.length) {
     pathArray.pop();
 }
 console.log(pathArray);
-
-console.log(window.location.protocol);
-if (window.location.protocol == "https:") {
-    console.log("http");
-    url += "../";
-}
-
 for (let i = 0; i < pathArray.length; i++) {
     url += "../"
 }
