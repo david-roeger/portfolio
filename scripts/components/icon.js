@@ -2,9 +2,19 @@ import { getAttrText } from './modules/utils.js';
 
 let url = '';
 let pathArray = window.location.pathname.split( '/' );
-pathArray =  pathArray.filter(path => path !== "" && !path.includes(".html"));
+pathArray =  pathArray.filter(path => path !== "");
+if(pathArray.length) {
+    pathArray.pop();
+}
 console.log(pathArray);
-for (let i = 0; i < pathArray.length - 1; i++) {
+
+console.log(window.location.protocol);
+if (window.location.protocol == "https:") {
+    console.log("http");
+    url += "../";
+}
+
+for (let i = 0; i < pathArray.length; i++) {
     url += "../"
 }
 
